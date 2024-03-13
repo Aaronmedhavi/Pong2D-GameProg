@@ -21,7 +21,7 @@ public class BallControl : MonoBehaviour
         }
         else 
         {
-            rb2d.AddForce(new Vector2(20, rand - 15));
+            rb2d.AddForce(new Vector2(-20, -15));
         }
     }
 
