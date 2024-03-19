@@ -41,10 +41,17 @@ public class BallControl : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player")) // If hit player
         {
+            RotateBall();
             Vector2 vel;
             vel.x = rb2d.velocity.x;
             vel.y = (rb2d.velocity.y / 2) + (collision.collider.attachedRigidbody.velocity.y / 3); // Takes player velocity value
             rb2d.velocity = vel;
         }
+    }
+
+    void RotateBall()
+    {
+        // Rotate the ball 180 degrees on the Z-axis
+        transform.Rotate(0, 0, 180);
     }
 }
