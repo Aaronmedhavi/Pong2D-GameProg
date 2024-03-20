@@ -51,7 +51,6 @@ public class BallControl : MonoBehaviour
 
     void RotateBall()
     {
-        // Rotate the ball 180 degrees on the Z-axis
         transform.Rotate(0, 0, 180);
     }
 }
