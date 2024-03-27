@@ -28,7 +28,9 @@ public class BallControl : MonoBehaviour
     void ResetBall() // Make transform value = 0
     {
         rb2d.velocity = Vector2.zero;
+        rb2d.angularVelocity = 0f; // Reset angular velocity to stop spinning
         transform.position = Vector2.zero;
+        transform.rotation = Quaternion.identity; // Reset rotation to 0 on all axes
     }
 
     void RestartGame()
