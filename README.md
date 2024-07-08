@@ -4,4 +4,4 @@
 </p>
 
 ## About
-An exciting and innovative 2D space themed pong game 
+Pong Star is a 2D space-themed take of the classic Pong game, developed using Unity game engine. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars.
