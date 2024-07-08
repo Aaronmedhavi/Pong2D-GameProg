@@ -4,3 +4,4 @@
 </p>
 
 ## About
+An exciting and innovative 2D space themed pong game 
