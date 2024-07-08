@@ -13,4 +13,7 @@ Pong Star is a 2D space-themed take of the classic Pong game, developed using Un
 - Retro-style sound effects
 
 ## Installation
-1. 
+1. Find the build version here:
+   ```
+   https://github.com/Aaronmedhavi/Pong2D-GameProg/releases/tag/v.0.1.0-alpha
+   ```
