@@ -17,3 +17,15 @@ Pong Star is a 2D space-themed take of the classic Pong game, developed using Un
    ```
    https://github.com/Aaronmedhavi/Pong2D-GameProg/releases/tag/v.0.1.0-alpha
    ```
+2. Extract the files from the zip folder.
+3. Find and click on Pong2DV2.exe.
+4. Enjoy the game.
+
+## Installation(Open in Unity Editor)
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/space-pong.git
+   ```
+2. Open the project in Unity (version 2022.3.9f1 or later).
+3. Open the "MainMenu" scene located in the "Assets/Scenes" folder.
+4. Press the Play button in Unity Editor to start the game.
