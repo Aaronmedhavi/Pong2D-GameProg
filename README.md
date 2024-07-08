@@ -10,4 +10,7 @@ Pong Star is a 2D space-themed take of the classic Pong game, developed using Un
 - Single-player mode against an AI opponent
 - Local multiplayer mode for two players
 - Space-themed graphics and animations
-- Retro-style sound effects and music
+- Retro-style sound effects
+
+## Installation
+1. 
