@@ -1,16 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;  // Import Photon PUN
 
-public class SideWall : MonoBehaviour
+public class SideWall : MonoBehaviourPunCallbacks
 {
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.name == "Ball")
+        if (hitInfo.CompareTag("Ball"))
         {
-            string wallName = transform.name;
-            GameManager.instance.Score(wallName);
-            hitInfo.gameObject.SendMessage("RestartGame", 1.0f, SendMessageOptions.RequireReceiver);
+            Debug.Log("Ball hit the wall: " + transform.name);
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                string wallName = transform.name;
+
+                GameManager.instance.Score(wallName);
+                hitInfo.gameObject.GetComponent<BallControl>().RestartGame(1.0f);
+            }
         }
     }
+
 }
