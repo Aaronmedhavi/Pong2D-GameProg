@@ -1,19 +1,20 @@
 ## About
-Pong Star is a 2D space-themed take of the classic Pong game, developed using Unity game engine. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars.
+Pong Star is a 2D space-themed take of the classic Pong game. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars. As the programmer, I coded the main ball, player, and scoring mechanic. I also implement a photon multiplayer into the game that allows player to play multiplayer from different devices.
 
 ## Features
 - Single-player mode against an AI opponent
 - Local multiplayer mode for two players
 - Space-themed graphics and animations
 - Retro-style sound effects
+- Online multiplayer for two players
 
 ## Installation
-1. Find the build version here:
+1. Download the game here:
    ```
-   https://github.com/Aaronmedhavi/Pong2D-GameProg/releases/tag/v.0.1.0-alpha
+   https://aaronmedhavi.itch.io/pong-star
    ```
 2. Extract the files from the zip folder.
-3. Find and click on Pong2DV2.exe.
+3. Find and click on Pong2DV2.exe
 4. Enjoy the game.
 
 ## Installation(Open in Unity Editor)
