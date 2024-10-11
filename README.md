@@ -34,8 +34,3 @@ Pong Star is a 2D space-themed take of the classic Pong game. In this game, play
 - Player 2 (right ship):
   - Move Up: Up Arrow
   - Move Down: Down Arrow
-
- ## Contact
-If you have any questions, suggestions, or issues, please contact me at aaronmedhavi@gmail.com.
-
-Enjoy Playing Pong Star!
