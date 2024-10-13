@@ -278,7 +278,6 @@ GameObject:
   - component: {fileID: 287694044}
   - component: {fileID: 287694043}
   - component: {fileID: 287694045}
-  - component: {fileID: 287694046}
   m_Layer: 0
   m_Name: PlayerR
   m_TagString: PlayerR
@@ -447,28 +446,6 @@ MonoBehaviour:
   ball: {fileID: 5943195461348983465}
   enemy: {fileID: 287694042}
   speed: 10
---- !u!114 &287694046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287694039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 4
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &322078756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1240,6 @@ GameObject:
   - component: {fileID: 1407769349}
   - component: {fileID: 1407769351}
   - component: {fileID: 1407769350}
-  - component: {fileID: 1407769352}
   m_Layer: 0
   m_Name: PlayerL
   m_TagString: PlayerL
@@ -1417,28 +1393,6 @@ MonoBehaviour:
   speed: 10
   boundY: 4.38
   rb2d: {fileID: 0}
---- !u!114 &1407769352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407769346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &1461331542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,7 +1719,6 @@ GameObject:
   - component: {fileID: 1914996239}
   - component: {fileID: 1914996238}
   - component: {fileID: 1914996240}
-  - component: {fileID: 1914996241}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1822,28 +1775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e51ea68ad142434286ebebe3d474779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1914996241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914996237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 3
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &2033759380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,17 +2779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 8460508898368403309}
-  sceneViewId: 1
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &8460508898368403309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2871,10 +2791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

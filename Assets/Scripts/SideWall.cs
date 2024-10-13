@@ -1,23 +1,23 @@
-using System.Collections;
 using UnityEngine;
-using Photon.Pun;  // Import Photon PUN
+using Unity.Netcode;
 
-public class SideWall : MonoBehaviourPunCallbacks
+public class SideWall : NetworkBehaviour
 {
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    private void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        if (!IsServer) return;
+
         if (hitInfo.CompareTag("Ball"))
         {
-            Debug.Log("Ball hit the wall: " + transform.name);
+            string wallName = transform.name;
+            GameManager.Instance.ScoreServerRpc(wallName);
 
-            if (PhotonNetwork.IsMasterClient)
+            // Assuming you have a BallControl script with a NetworkObject
+            BallControl BallControl = hitInfo.GetComponent<BallControl>();
+            if (BallControl != null)
             {
-                string wallName = transform.name;
-
-                GameManager.instance.Score(wallName);
-                hitInfo.gameObject.GetComponent<BallControl>().RestartGame(1.0f);
+                BallControl.ResetBallServerRpc();
             }
         }
     }
-
 }

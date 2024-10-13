@@ -1,31 +1,28 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Photon.Pun; // Import Photon PUN
-using Photon.Realtime;
+using Unity.Netcode;
 
-public class GameManager : MonoBehaviourPunCallbacks
+public class GameManager : NetworkBehaviour
 {
     public SceneManagement SceneManagement;
     public GameObject Panelwin;
     public string textPlayerL, textPlayerR;
     public TMP_Text UIPlayerWin;
     public GameObject explosionPrefab;
-
-    public int PlayerScoreL = 0;
-    public int PlayerScoreR = 0;
-
     public TMP_Text txtPlayerScoreL;
     public TMP_Text txtPlayerScoreR;
 
-    public static GameManager instance;
+    private NetworkVariable<int> PlayerScoreL = new NetworkVariable<int>();
+    private NetworkVariable<int> PlayerScoreR = new NetworkVariable<int>();
 
-    public void Awake()
+    public static GameManager Instance { get; private set; }
+
+    private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -33,74 +30,67 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
-        txtPlayerScoreL.text = PlayerScoreL.ToString();
-        txtPlayerScoreR.text = PlayerScoreR.ToString();
+        PlayerScoreL.OnValueChanged += OnScoreChanged;
+        PlayerScoreR.OnValueChanged += OnScoreChanged;
+        UpdateScoreUI();
     }
 
-    // This method is called when a score occurs, but now it's updated across the network
-    public void Score(string wallID)
+    public override void OnNetworkDespawn()
     {
-        if (PhotonNetwork.IsMasterClient) // Ensure only the Master Client handles the score logic
-        {
-            if (wallID == "BorderLeft")
-            {
-                // Call RPC to update Player R's score on all clients
-                photonView.RPC("UpdateScoreR", RpcTarget.AllBuffered);
-                TriggerExplosion("PlayerL");
-            }
-            else
-            {
-                // Call RPC to update Player L's score on all clients
-                photonView.RPC("UpdateScoreL", RpcTarget.AllBuffered);
-                TriggerExplosion("PlayerR");
-            }
+        PlayerScoreL.OnValueChanged -= OnScoreChanged;
+        PlayerScoreR.OnValueChanged -= OnScoreChanged;
+    }
 
-            // Check if anyone has won
-            photonView.RPC("ScoreCheck", RpcTarget.AllBuffered);
+    private void OnScoreChanged(int previousValue, int newValue)
+    {
+        UpdateScoreUI();
+        if (IsServer)
+        {
+            ScoreCheck();
         }
     }
 
-    // RPC method to update Player L's score on all clients
-    [PunRPC]
-    public void UpdateScoreL()
+    [ServerRpc(RequireOwnership = false)]
+    public void ScoreServerRpc(string wallID)
     {
-        PlayerScoreL += 10;
-        txtPlayerScoreL.text = PlayerScoreL.ToString();
-    }
-
-    // RPC method to update Player R's score on all clients
-    [PunRPC]
-    public void UpdateScoreR()
-    {
-        PlayerScoreR += 10;
-        txtPlayerScoreR.text = PlayerScoreR.ToString();
-    }
-
-    // RPC method to check the score and declare a winner if the condition is met
-    [PunRPC]
-    public void ScoreCheck()
-    {
-        if (PlayerScoreL >= 50)
+        if (wallID == "BorderLeft")
         {
-            Debug.Log("PlayerL Win");
-            UIPlayerWin.text = textPlayerL;
-            Panelwin.SetActive(true);
-            ChangeSceneWin();
+            PlayerScoreR.Value += 10;
+            TriggerExplosionClientRpc(0); // Player 1 (OwnerClientId 0) scored against
         }
-        else if (PlayerScoreR >= 50)
+        else
         {
-            Debug.Log("PlayerR Win");
-            UIPlayerWin.text = textPlayerR;
-            Panelwin.SetActive(true);
-            ChangeSceneWin();
+            PlayerScoreL.Value += 10;
+            TriggerExplosionClientRpc(1); // Player 2 (OwnerClientId 1) scored against
         }
     }
 
-    private void ChangeSceneWin()
+    private void UpdateScoreUI()
     {
-        Invoke("ChangeSceneToMenu", 2f);
+        txtPlayerScoreL.text = PlayerScoreL.Value.ToString();
+        txtPlayerScoreR.text = PlayerScoreR.Value.ToString();
+    }
+
+    private void ScoreCheck()
+    {
+        if (PlayerScoreL.Value == 50)
+        {
+            EndGameClientRpc(textPlayerL);
+        }
+        else if (PlayerScoreR.Value == 50)
+        {
+            EndGameClientRpc(textPlayerR);
+        }
+    }
+
+    [ClientRpc]
+    private void EndGameClientRpc(string winnerText)
+    {
+        UIPlayerWin.text = winnerText;
+        Panelwin.SetActive(true);
+        Invoke(nameof(ChangeSceneToMenu), 2f);
     }
 
     private void ChangeSceneToMenu()
@@ -108,32 +98,31 @@ public class GameManager : MonoBehaviourPunCallbacks
         SceneManagement.ChangeScene("MainMenu");
     }
 
-    private void TriggerExplosion(string playerTag)
+    [ClientRpc]
+    private void TriggerExplosionClientRpc(int playerScoredAgainst)
     {
-        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
-        if (player != null && explosionPrefab != null)
+        PlayerControl[] players = FindObjectsOfType<PlayerControl>();
+        foreach (PlayerControl player in players)
         {
-            // Use PhotonNetwork.Instantiate to spawn the explosion across the network
-            GameObject explosion = PhotonNetwork.Instantiate(explosionPrefab.name, player.transform.position, Quaternion.identity);
+            if ((int)player.OwnerClientId == playerScoredAgainst)
+            {
+                SpawnExplosion(player.transform.position);
+                break;
+            }
+        }
+    }
 
-            // Play the explosion sound (this is synchronized since it's part of the prefab)
+    private void SpawnExplosion(Vector3 position)
+    {
+        if (explosionPrefab != null)
+        {
+            GameObject explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
             AudioSource explosionAudio = explosion.GetComponent<AudioSource>();
             if (explosionAudio != null)
             {
                 explosionAudio.Play();
             }
-
-            // Start a coroutine to destroy the explosion after a delay
-            StartCoroutine(DestroyExplosionAfterDelay(explosion, 1f));
+            Destroy(explosion, 1f);
         }
-    }
-
-    // Coroutine to destroy the explosion after a delay
-    private IEnumerator DestroyExplosionAfterDelay(GameObject explosion, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        // Use PhotonNetwork.Destroy to destroy the object across the network
-        PhotonNetwork.Destroy(explosion);
     }
 }
