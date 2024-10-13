@@ -1,5 +1,5 @@
 ## About
-Pong Star is a 2D space-themed take of the classic Pong game. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars. As the programmer, I coded the main ball, player, and scoring mechanic. I also implement a photon multiplayer into the game that allows player to play multiplayer from different devices.
+Pong Star is a 2D space-themed take of the classic Pong game. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars. 
 
 ## Features
 - Single-player mode against an AI opponent
@@ -34,8 +34,3 @@ Pong Star is a 2D space-themed take of the classic Pong game. In this game, play
 - Player 2 (right ship):
   - Move Up: Up Arrow
   - Move Down: Down Arrow
-
- ## Contact
-If you have any questions, suggestions, or issues, please contact me at aaronmedhavi@gmail.com.
-
-Enjoy Playing Pong Star!
