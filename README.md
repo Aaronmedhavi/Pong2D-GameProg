@@ -1,13 +1,6 @@
 ## About
 Pong Star is a 2D space-themed take of the classic Pong game. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars. 
 
-## Features
-- Single-player mode against an AI opponent
-- Local multiplayer mode for two players
-- Space-themed graphics and animations
-- Retro-style sound effects
-- Online multiplayer for two players
-
 ## Installation
 1. Download the game here:
    ```
@@ -34,3 +27,18 @@ Pong Star is a 2D space-themed take of the classic Pong game. In this game, play
 - Player 2 (right ship):
   - Move Up: Up Arrow
   - Move Down: Down Arrow
+
+## Features and Script
+- Single-player mode against an AI opponent
+- Local multiplayer mode for two players
+- Space-themed graphics and animations
+- Retro-style sound effects
+- Online multiplayer for two players
+
+|  Script       | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| `NetworkUI.cs` | Manages the UI elements related to multiplayer. |
+| `BallSpawner.cs` | Spawn the ball into the game when the host and client joined. |
+| `GameManager.cs`  | Manages the score, UI elements, and special effects. |
+| `BallControl.cs`  | Handle the ball movement and syncing them across client and host. |
+| `etc`  | |
