@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
@@ -11,8 +13,6 @@ public class SideWall : NetworkBehaviour
         {
             string wallName = transform.name;
             GameManager.Instance.ScoreServerRpc(wallName);
-
-            // Assuming you have a BallControl script with a NetworkObject
             BallControl BallControl = hitInfo.GetComponent<BallControl>();
             if (BallControl != null)
             {

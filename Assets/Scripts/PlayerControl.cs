@@ -34,7 +34,6 @@ public class PlayerControl : NetworkBehaviour
             }
             else
             {
-                // Player 2
                 transform.position = new Vector2(player2SpawnPosition, 0);
                 playerSpriteIndex.Value = 1;
             }

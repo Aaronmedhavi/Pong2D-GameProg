@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -58,12 +60,12 @@ public class GameManager : NetworkBehaviour
         if (wallID == "BorderLeft")
         {
             PlayerScoreR.Value += 10;
-            TriggerExplosionClientRpc(0); // Player 1 (OwnerClientId 0) scored against
+            TriggerExplosionClientRpc(0);
         }
         else
         {
             PlayerScoreL.Value += 10;
-            TriggerExplosionClientRpc(1); // Player 2 (OwnerClientId 1) scored against
+            TriggerExplosionClientRpc(1);
         }
     }
 
