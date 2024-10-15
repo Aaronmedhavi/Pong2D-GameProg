@@ -20,17 +20,11 @@ Pong Star is a 2D space-themed take of the classic Pong game. In this game, play
 4. Press the Play button in Unity Editor to start the game.
 
 ## How to Play
-- Player 1 (left ship):
   - Move Up: W
   - Move Down: S
 
-- Player 2 (right ship):
-  - Move Up: Up Arrow
-  - Move Down: Down Arrow
-
 ## Features and Script
 - Single-player mode against an AI opponent
-- Local multiplayer mode for two players
 - Space-themed graphics and animations
 - Retro-style sound effects
 - Online multiplayer for two players
