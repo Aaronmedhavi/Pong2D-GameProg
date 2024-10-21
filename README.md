@@ -45,3 +45,7 @@ Pong Star is a 2D space-themed take of the classic Pong game. In this game, play
 | `GameManager.cs`  | Manages the score, UI elements, and special effects. |
 | `BallControl.cs`  | Handle the ball movement and syncing them across client and host. |
 | `etc`  | |
+
+## 📫 Contact
+If you want to provide feedback or report bugs, feel free to reach out to me here:
+- Email: aaronmedhavi@gmail.com
