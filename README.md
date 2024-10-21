@@ -1,14 +1,7 @@
 ## 🏓About
 Pong Star is a 2D space-themed take of the classic Pong game. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars. 
 
-## 🕹️ Installation
-1. Download the game here:
-   ```
-   https://aaronmedhavi.itch.io/pong-star
-   ```
-2. Extract the files from the zip folder.
-3. Find and click on Pong2DV2.exe
-4. Enjoy the game.
+## Project Info
 
 ## 🎮 How to Play
   - Move Up: W
@@ -45,6 +38,15 @@ Pong Star is a 2D space-themed take of the classic Pong game. In this game, play
 | `GameManager.cs`  | Manages the score, UI elements, and special effects. |
 | `BallControl.cs`  | Handle the ball movement and syncing them across client and host. |
 | `etc`  | |
+
+## 🕹️ Installation
+1. Download the game here:
+   ```
+   https://aaronmedhavi.itch.io/pong-star
+   ```
+2. Extract the files from the zip folder.
+3. Find and click on Pong2DV2.exe
+4. Enjoy the game.
 
 ## 📫 Contact
 If you want to provide feedback or report bugs, feel free to reach out to me here:
