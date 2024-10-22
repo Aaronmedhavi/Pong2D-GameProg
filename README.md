@@ -2,6 +2,13 @@
 Pong Star is a 2D space-themed take of the classic Pong game. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars. 
 
 ## Project Info
+| **Role** | **Team Size** | **Development Time** |
+|----------|---------------|---------------------|
+| Game Programmer | 1 | 1 Week |
+
+| **Name** | **Role** |
+|----------|----------|
+| Aaron Medhavi Kusnandar | Game Programmer |
 
 ## 🎮 How to Play
   - Move Up: W
