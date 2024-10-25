@@ -1101,8 +1101,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 877042323}
-  - component: {fileID: 877042322}
   - component: {fileID: 877042324}
+  - component: {fileID: 877042322}
   m_Layer: 0
   m_Name: NetworkUI
   m_TagString: Untagged

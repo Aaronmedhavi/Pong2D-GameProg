@@ -52,7 +52,7 @@ public class BallSpawner : NetworkBehaviour
         }
     }
 
-    private System.Collections.IEnumerator SpawnBallWithDelay(float delay)
+    private IEnumerator SpawnBallWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         SpawnBall();
