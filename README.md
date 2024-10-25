@@ -1,29 +1,29 @@
 ## 🏓About
 Pong Star is a 2D space-themed take of the classic Pong game. In this game, players control ships to hit a ball back and forth in a space environment filled with planets and stars. 
 
-## 🕹️ Installation
-1. Download the game here:
-   ```
-   https://aaronmedhavi.itch.io/pong-star
-   ```
-2. Extract the files from the zip folder.
-3. Find and click on Pong2DV2.exe
-4. Enjoy the game.
+## Project Info
+| **Role** | **Team Size** | **Development Time** |
+|----------|---------------|---------------------|
+| Game Programmer | 1 | 1 Week |
 
-## 📁 Installation(Open in Unity Editor)
-1. Clone the repository:
-   ```
-   git clone https://github.com/Aaronmedhavi/Pong2D-GameProg.git
-   ```
-2. Open the project in Unity (version 2022.3.9f1 or later).
-3. Open the "MainMenu" scene located in the "Assets/Scenes" folder.
-4. Press the Play button in Unity Editor to start the game.
+| **Name** | **Role** |
+|----------|----------|
+| Aaron Medhavi Kusnandar | Game Programmer |
 
 ## 🎮 How to Play
   - Move Up: W
   - Move Down: S
 
 ## 📺 Gameplay Footage / Screenshot
+  <tr>
+    <td><img src="https://github.com/Aaronmedhavi/ProjectClips/blob/main/Untitled video - Made with Clipchamp (2).gif?raw=true" width="500"></td>
+  </tr>
+<table>
+  <tr>
+    <td><img src="https://github.com/Aaronmedhavi/ProjectClips/blob/main/Screenshot 2024-09-29 214546.png?raw=true" width="400"></td>
+    <td><img src="https://github.com/Aaronmedhavi/ProjectClips/blob/main/Screenshot 2024-09-29 214553.png" width="400"></td>
+  </tr>
+</table>
 
 ## ⚙️ Mechanics
 <h3>Netcode For GameObjects</h3>
@@ -45,3 +45,16 @@ Pong Star is a 2D space-themed take of the classic Pong game. In this game, play
 | `GameManager.cs`  | Manages the score, UI elements, and special effects. |
 | `BallControl.cs`  | Handle the ball movement and syncing them across client and host. |
 | `etc`  | |
+
+## 🕹️ Installation
+1. Download the game here:
+   ```
+   https://aaronmedhavi.itch.io/pong-star
+   ```
+2. Extract the files from the zip folder.
+3. Find and click on Pong2DV2.exe
+4. Enjoy the game.
+
+## 📫 Contact
+If you want to provide feedback or report bugs, feel free to reach out to me here:
+- Email: aaronmedhavi@gmail.com
