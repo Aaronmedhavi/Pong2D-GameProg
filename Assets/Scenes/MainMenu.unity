@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1815,8 +1814,6 @@ MonoBehaviour:
   textPlayerR: 
   UIPlayerWin: {fileID: 0}
   explosionPrefab: {fileID: 0}
-  PlayerScoreL: 0
-  PlayerScoreR: 0
   txtPlayerScoreL: {fileID: 0}
   txtPlayerScoreR: {fileID: 0}
 --- !u!4 &1914996239
@@ -2468,6 +2465,7 @@ GameObject:
   - component: {fileID: 7609109905854259218}
   - component: {fileID: 1854760682865033021}
   - component: {fileID: 8286481546158854807}
+  - component: {fileID: 8286481546158854808}
   m_Layer: 10
   m_Name: Ball
   m_TagString: Untagged
@@ -2595,6 +2593,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8286481546158854808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6299611862460961217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 807280818
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
